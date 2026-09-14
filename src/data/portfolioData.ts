@@ -56,8 +56,8 @@ export const PERSONAL_INFO = {
 Graduated in 2023 with a Bachelor's degree in Information Technology from Mansoura University (Faculty of Computers and Information), followed by an intensive 4-month Frontend Track at ITI (Information Technology Institute). With deep hands-on expertise across real-world commercial platforms, e-commerce systems, and dynamic enterprise portals, I transform complex ideas into intuitive digital experiences.`,
   shortBio: 'Crafting responsive, high-performance, and visually captivating web applications with Next.js, React, TypeScript, and modern design systems.',
   location: 'El-Mahalla El-Kubra, Gharbia, Egypt',
-  email: 'mohamedelfeshawy43@gmail.com',
-  phone: '+20 102 748 5963',
+  email: 'melfeshawy42@gmail.com',
+  phone: '01201029395',
   avatar: '/images/profile.jpg',
   availableForHire: true,
   yearsOfExperience: '2+',
@@ -66,7 +66,7 @@ Graduated in 2023 with a Bachelor's degree in Information Technology from Mansou
   githubProfile: 'https://github.com/Mohamed-Essam-Elfeshawy',
   linkedinProfile: 'https://www.linkedin.com/in/mohamed-elfeshawy-45a098246/',
   twitterProfile: 'https://x.com/AnaMoha29244923',
-  whatsappUrl: 'https://wa.me/201027485963',
+  whatsappUrl: 'https://wa.me/01201029395',
   resumeUrl: '#getInTouch',
 };
 
