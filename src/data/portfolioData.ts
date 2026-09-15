@@ -58,9 +58,8 @@ Adept at working in Agile/Scrum environments using Jira and Sprint methodologies
   githubUsername: 'Mohamed-Essam-Elfeshawy',
   githubProfile: 'https://github.com/Mohamed-Essam-Elfeshawy',
   linkedinProfile: 'https://www.linkedin.com/in/mohamed-elfeshawy-45a098246/',
-  twitterProfile: 'https://x.com/AnaMoha29244923',
   whatsappUrl: 'https://wa.me/201201029395',
-  resumeUrl: '#contact',
+  resumeUrl: '/Mohamed_Essam_Elfeshawy_CV.pdf',
 };
 
 export const STATS = [

@@ -112,13 +112,26 @@ export default function AboutSection() {
                   </div>
                 </div>
 
-                <a
-                  href="#contact"
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 transition-all duration-300"
-                >
-                  <Mail className="w-4 h-4" />
-                  <span>Get In Touch With Me</span>
-                </a>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <a
+                    href={PERSONAL_INFO.resumeUrl}
+                    download="Mohamed_Essam_Elfeshawy_CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-3 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 hover:text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition-all duration-300 hover:scale-102 group"
+                  >
+                    <Download className="w-4 h-4 text-cyan-400 group-hover:-translate-y-0.5 transition-transform" />
+                    <span>Download CV</span>
+                  </a>
+
+                  <a
+                    href="#contact"
+                    className="py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:scale-102"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Get In Touch</span>
+                  </a>
+                </div>
 
               </div>
             </div>

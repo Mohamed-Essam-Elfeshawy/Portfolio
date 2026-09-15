@@ -12,9 +12,10 @@ import {
   Copy, 
   Linkedin, 
   Github, 
-  MessageSquare,
-  Sparkles,
-  ExternalLink
+  MessageSquare, 
+  Sparkles, 
+  ExternalLink,
+  Download
 } from 'lucide-react';
 
 export default function ContactSection() {
@@ -128,13 +129,37 @@ export default function ContactSection() {
               </div>
             </div>
 
+            {/* Resume / CV Card */}
+            <div className="glass-panel p-6 rounded-2xl border border-cyan-500/30 bg-gradient-to-r from-cyan-500/5 via-indigo-500/5 to-transparent flex items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  <Download className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white">Curriculum Vitae</h4>
+                  <p className="text-xs text-gray-400 font-mono">Mohamed_Essam_Elfeshawy.pdf</p>
+                </div>
+              </div>
+
+              <a
+                href={PERSONAL_INFO.resumeUrl}
+                download="Mohamed_Essam_Elfeshawy_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-md shadow-cyan-500/20 transition-all hover:scale-105 active:scale-95 shrink-0"
+              >
+                <span>Download CV</span>
+                <Download className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
             {/* Direct Channels Links */}
             <div className="glass-panel p-6 rounded-2xl border border-white/10 space-y-3">
               <h4 className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-3">
                 Direct Channels & Socials
               </h4>
               
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <a
                   href={PERSONAL_INFO.linkedinProfile}
                   target="_blank"
@@ -170,19 +195,6 @@ export default function ContactSection() {
                   <span className="flex items-center gap-2">
                     <MessageSquare className="w-4 h-4 text-emerald-400" />
                     WhatsApp
-                  </span>
-                  <ExternalLink className="w-3.5 h-3.5 text-gray-500" />
-                </a>
-
-                <a
-                  href={PERSONAL_INFO.twitterProfile}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-[#131726] hover:bg-[#181d30] border border-white/5 hover:border-cyan-500/30 flex items-center justify-between text-xs font-medium text-gray-200 transition-all hover:scale-102"
-                >
-                  <span className="flex items-center gap-2">
-                    <span className="text-cyan-400 font-bold">𝕏</span>
-                    Twitter
                   </span>
                   <ExternalLink className="w-3.5 h-3.5 text-gray-500" />
                 </a>

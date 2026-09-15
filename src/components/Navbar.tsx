@@ -9,9 +9,10 @@ import {
   Github, 
   Linkedin, 
   Send, 
-  Sparkles,
-  ExternalLink,
-  Code2
+  Sparkles, 
+  ExternalLink, 
+  Code2,
+  Download
 } from 'lucide-react';
 
 const NAV_ITEMS = [
@@ -109,6 +110,17 @@ export default function Navbar() {
           {/* Right Action Icons & CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
+              href={PERSONAL_INFO.resumeUrl}
+              download="Mohamed_Essam_Elfeshawy_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-cyan-300 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 transition-all hover:scale-105 active:scale-95"
+            >
+              <Download className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Download CV</span>
+            </a>
+
+            <a
               href={PERSONAL_INFO.githubProfile}
               target="_blank"
               rel="noopener noreferrer"
@@ -161,6 +173,18 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+
+            <a
+              href={PERSONAL_INFO.resumeUrl}
+              download="Mohamed_Essam_Elfeshawy_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-3 rounded-lg text-base font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 my-1"
+            >
+              <Download className="w-4 h-4 text-cyan-400" />
+              <span>Download CV (PDF)</span>
+            </a>
+
             <div className="pt-4 mt-2 border-t border-white/10 flex items-center justify-between">
               <div className="flex gap-2">
                 <a

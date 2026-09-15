@@ -107,7 +107,7 @@ export default function Hero() {
             </p>
 
             {/* CTA Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-10 w-full sm:w-auto">
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 via-primary-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105 active:scale-95 group"
@@ -117,11 +117,22 @@ export default function Hero() {
               </a>
 
               <a
-                href="#experience"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-gray-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/40 hover:text-white transition-all duration-300 hover:scale-105"
+                href={PERSONAL_INFO.resumeUrl}
+                download="Mohamed_Essam_Elfeshawy_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-cyan-300 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 shadow-sm shadow-cyan-500/10 transition-all duration-300 hover:scale-105 active:scale-95 group"
               >
-                <span>Certifications & Career</span>
+                <Download className="w-4 h-4 text-cyan-400 group-hover:-translate-y-0.5 transition-transform" />
+                <span>Download CV</span>
+              </a>
+
+              <a
+                href="#experience"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl font-semibold text-gray-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/40 hover:text-white transition-all duration-300 hover:scale-105"
+              >
                 <Award className="w-4 h-4 text-emerald-400" />
+                <span>Certifications</span>
               </a>
 
               <a
