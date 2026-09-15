@@ -9,7 +9,11 @@ import {
   Wrench, 
   Sparkles, 
   Check, 
-  Cpu
+  Cpu,
+  ShoppingBag,
+  Users,
+  Languages,
+  CheckCircle2
 } from 'lucide-react';
 
 const ICON_MAP: Record<string, React.ReactNode> = {
@@ -17,7 +21,19 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   Database: <Database className="w-5 h-5" />,
   Palette: <Palette className="w-5 h-5" />,
   Wrench: <Wrench className="w-5 h-5" />,
+  ShoppingBag: <ShoppingBag className="w-5 h-5" />,
 };
+
+const SOFT_SKILLS = [
+  'Team Leadership & Mentoring',
+  'Agile Mindset & Scrum (Jira, Sprint)',
+  'Problem Solving & Analytical Thinking',
+  'Cross-functional Team Collaboration',
+  'Effective Communication',
+  'Time Management & Deadline Ownership',
+  'Continuous Learning & Tech Adaptation',
+  'Creativity & Clean UI Craftsmanship',
+];
 
 export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -46,7 +62,7 @@ export default function SkillsSection() {
             Technical Stack & <span className="text-gradient-cyan">Expertise</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-400">
-            A comprehensive suite of modern web technologies, state architecture, and UI engineering tools I use daily.
+            A comprehensive overview of my frontend engineering toolkit, e-commerce customization (Salla & Zid), state architectures, and agile methodologies.
           </p>
         </div>
 
@@ -120,17 +136,86 @@ export default function SkillsSection() {
           ))}
         </div>
 
+        {/* Soft Skills & Languages Cards */}
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          {/* Soft Skills Card (2 cols) */}
+          <div className="lg:col-span-2 glass-panel rounded-2xl p-6 sm:p-8 border border-white/5">
+            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+              <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                <Users className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white">Soft Skills & Professional Leadership</h3>
+                <span className="text-xs text-gray-400 font-mono">Agile methodology, team management & execution</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              {SOFT_SKILLS.map((skill, idx) => (
+                <div key={idx} className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-xs sm:text-sm text-gray-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>{skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Languages Card (1 col) */}
+          <div className="glass-panel rounded-2xl p-6 sm:p-8 border border-white/5 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+                <div className="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                  <Languages className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Languages</h3>
+                  <span className="text-xs text-gray-400 font-mono">Communication proficiency</span>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-between">
+                  <div>
+                    <div className="text-sm font-bold text-white">Arabic</div>
+                    <div className="text-xs text-gray-400">Native Tongue</div>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Native
+                  </span>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-between">
+                  <div>
+                    <div className="text-sm font-bold text-white">English</div>
+                    <div className="text-xs text-gray-400">Professional Working Proficiency</div>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                    Intermediate
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-white/5 text-xs text-gray-400 text-center font-mono">
+              Ready for international & distributed teams
+            </div>
+          </div>
+
+        </div>
+
         {/* Additional Tech Chips / Quick Cloud */}
-        <div className="mt-14 glass-panel rounded-2xl p-6 sm:p-8 text-center border border-white/5">
+        <div className="mt-12 glass-panel rounded-2xl p-6 sm:p-8 text-center border border-white/5">
           <p className="text-xs uppercase tracking-widest text-gray-400 font-mono mb-4">
-            Additional Tools & Daily Workflow
+            Full Toolset & Daily Stack
           </p>
           <div className="flex flex-wrap justify-center gap-2.5">
             {[
-              'Next.js 14/15', 'React 18/19', 'TypeScript', 'Redux Toolkit', 'RTK Query', 
-              'TailwindCSS', 'Bootstrap 5', 'Material UI', 'ES6+ JavaScript', 'HTML5 Semantic', 
-              'CSS3 Animations', 'PWA', 'REST APIs', 'Axios', 'Git / GitHub', 'Vercel Deployment', 
-              'Netlify', 'Postman', 'Figma to Code', 'Responsive Web Design', 'SEO Optimization'
+              'Salla E-Commerce', 'Zid Platform', 'React.js', 'Next.js 14/15', 'TypeScript', 
+              'Redux Toolkit', 'RTK Query', 'TailwindCSS', 'Bootstrap 5', 'Material UI', 
+              'ES6+ JavaScript', 'HTML5 Semantic', 'CSS3 Animations', 'SASS', 'REST APIs', 
+              'Axios', 'Git / GitHub', 'Jira & Agile', 'Vercel Deployment', 'Netlify', 
+              'Postman', 'Figma to Code', 'Responsive Web Design', 'SEO Optimization', 'OpenAI API'
             ].map((tool) => (
               <span
                 key={tool}

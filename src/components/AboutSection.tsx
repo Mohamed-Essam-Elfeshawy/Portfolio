@@ -13,7 +13,9 @@ import {
   CheckCircle,
   ExternalLink,
   Download,
-  Sparkles
+  Sparkles,
+  Briefcase,
+  BookOpen
 } from 'lucide-react';
 
 export default function AboutSection() {
@@ -28,13 +30,13 @@ export default function AboutSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            About My Journey
+            About My Background
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Engineering Fast, Elegant & <span className="text-gradient-cyan">Scalable Web Apps</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-400">
-            A blend of academic rigor, intensive industry certification, and proven real-world frontend delivery.
+            A blend of solid computer science foundations, intensive ITI training, professional e-commerce delivery at Azzrk, and STEM teaching certification.
           </p>
         </div>
 
@@ -68,24 +70,38 @@ export default function AboutSection() {
                 <div className="space-y-3.5 text-sm text-gray-300 border-t border-white/5 pt-5 mb-6">
                   <div className="flex items-center justify-between py-1.5 border-b border-white/5">
                     <span className="text-gray-400 flex items-center gap-2">
-                      <GraduationCap className="w-4 h-4 text-cyan-400" />
-                      Degree
+                      <Briefcase className="w-4 h-4 text-cyan-400" />
+                      Current Role
                     </span>
-                    <span className="font-semibold text-white">B.Sc. Info Tech (2023)</span>
+                    <span className="font-semibold text-white">Front-End Developer @ Azzrk</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-white/5">
                     <span className="text-gray-400 flex items-center gap-2">
-                      <Award className="w-4 h-4 text-emerald-400" />
-                      Faculty
+                      <GraduationCap className="w-4 h-4 text-emerald-400" />
+                      Degree & Grade
                     </span>
-                    <span className="font-medium text-gray-200">Mansoura University FCI</span>
+                    <span className="font-semibold text-white">B.Sc. IT (Very Good)</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-white/5">
                     <span className="text-gray-400 flex items-center gap-2">
                       <Award className="w-4 h-4 text-indigo-400" />
+                      University
+                    </span>
+                    <span className="font-medium text-gray-200">Mansoura University (FCI)</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1.5 border-b border-white/5">
+                    <span className="text-gray-400 flex items-center gap-2">
+                      <Award className="w-4 h-4 text-amber-400" />
                       Intensive Track
                     </span>
-                    <span className="font-medium text-cyan-300">ITI Front-End (4 Months)</span>
+                    <span className="font-medium text-cyan-300">ITI Front-End (6 Months)</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1.5 border-b border-white/5">
+                    <span className="text-gray-400 flex items-center gap-2">
+                      <BookOpen className="w-4 h-4 text-emerald-400" />
+                      Instructor Cert
+                    </span>
+                    <span className="font-medium text-emerald-300">iSchool (STEM.org)</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-white/5">
                     <span className="text-gray-400 flex items-center gap-2">
@@ -113,17 +129,15 @@ export default function AboutSection() {
             
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p className="text-base sm:text-lg">
-                I am a dedicated <strong className="text-white font-bold">Front-End Developer</strong> specializing in 
-                <strong className="text-cyan-400"> React.js</strong>, <strong className="text-cyan-400">Next.js</strong>, and 
-                <strong className="text-cyan-400"> TypeScript</strong>. My passion lies in engineering responsive, highly performant, and user-centric web applications that solve real-world problems.
+                I am a results-oriented <strong className="text-white font-bold">Front-End React.js Developer</strong> with 6+ months of professional experience at <strong className="text-cyan-400">Azzrk</strong>, specializing in React.js, Next.js, and modern UI architectures.
               </p>
 
               <p className="text-sm sm:text-base text-gray-400">
-                In 2023, I graduated with a Bachelor&apos;s degree in Information Technology from <strong>Mansoura University (Faculty of Computers and Information)</strong>. To elevate my industry skills to top standards, I completed an intensive 4-month Front-End Track at the prestigious <strong>Information Technology Institute (ITI)</strong>.
+                Experienced in building scalable, high-performance web applications and customizing e-commerce platforms such as <strong className="text-white">Salla</strong> and <strong className="text-white">Zid</strong>. Skilled in REST API integration, state management (Redux Toolkit), performance optimization, and writing clean, maintainable, and reusable code.
               </p>
 
               <p className="text-sm sm:text-base text-gray-400">
-                Over the past years, I have architected and deployed diverse production platforms including the commercial <span className="text-white font-medium">FUJI Elevators KSA</span> corporate platform, <span className="text-white font-medium">FreshCart V2</span> Next.js e-commerce app, <span className="text-white font-medium">TABLYA Food Marketplace</span>, and enterprise <span className="text-white font-medium">HR Attendance Systems</span>.
+                I graduated with a grade of <strong className="text-white">"Very Good"</strong> from the <strong className="text-white">Faculty of Computer & Information Sciences, Mansoura University</strong> (2019–2023), followed by an intensive <strong className="text-white">6-month Front-End Web Development Track at the Information Technology Institute (ITI - Mansoura Branch)</strong>. Additionally, I hold the <strong className="text-emerald-400">Computer Science Instructor Certification from iSchool</strong> (STEM.org accredited).
               </p>
             </div>
 
@@ -134,8 +148,8 @@ export default function AboutSection() {
                   <CheckCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-0.5">Modern Tech Stack</h4>
-                  <p className="text-xs text-gray-400">Next.js App Router, React 18/19, TypeScript & TailwindCSS.</p>
+                  <h4 className="text-sm font-bold text-white mb-0.5">E-Commerce & Platforms</h4>
+                  <p className="text-xs text-gray-400">Salla & Zid customization, RTL layouts, WhatsApp ordering funnels.</p>
                 </div>
               </div>
 
@@ -144,8 +158,8 @@ export default function AboutSection() {
                   <CheckCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-0.5">State & Architecture</h4>
-                  <p className="text-xs text-gray-400">Redux Toolkit, RTK Query caching & strict typing.</p>
+                  <h4 className="text-sm font-bold text-white mb-0.5">Modern Architecture</h4>
+                  <p className="text-xs text-gray-400">React.js, Next.js App Router, TypeScript, Redux Toolkit & RTK Query.</p>
                 </div>
               </div>
 
@@ -154,8 +168,8 @@ export default function AboutSection() {
                   <CheckCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-0.5">Pixel-Perfect UI</h4>
-                  <p className="text-xs text-gray-400">Fluid animations, micro-interactions & accessibility.</p>
+                  <h4 className="text-sm font-bold text-white mb-0.5">Agile & Leadership</h4>
+                  <p className="text-xs text-gray-400">Scrum sprints, Jira task tracking, Git workflows & team leadership.</p>
                 </div>
               </div>
 
@@ -164,8 +178,8 @@ export default function AboutSection() {
                   <CheckCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-0.5">Performance & SEO</h4>
-                  <p className="text-xs text-gray-400">Fast Lighthouse scores, SSR/SSG & Vercel deployment.</p>
+                  <h4 className="text-sm font-bold text-white mb-0.5">STEM & CS Instruction</h4>
+                  <p className="text-xs text-gray-400">Certified by iSchool & STEM.org in teaching CS fundamentals & coding.</p>
                 </div>
               </div>
             </div>

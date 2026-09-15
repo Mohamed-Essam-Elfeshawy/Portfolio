@@ -67,15 +67,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             fill
             className="object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0e121d] via-[#0e121d]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e121d] via-[#0e121d]/30 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/70 via-black/30 to-transparent pointer-events-none" />
           
           {/* Top badges */}
-          <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 backdrop-blur-md">
+          <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#070a12]/95 text-cyan-300 border border-cyan-400/50 backdrop-blur-md shadow-lg shadow-black/80 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
               {project.category}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-mono bg-black/40 text-gray-300 border border-white/10 backdrop-blur-md flex items-center gap-1">
-              <Calendar className="w-3 h-3 text-cyan-400" />
+            <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#070a12]/95 text-gray-200 border border-white/20 backdrop-blur-md shadow-lg shadow-black/80 flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-cyan-400" />
               {project.year}
             </span>
           </div>

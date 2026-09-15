@@ -14,15 +14,18 @@ import {
   Layers, 
   Terminal,
   ExternalLink,
-  ChevronDown
+  ChevronDown,
+  ShoppingBag,
+  Award
 } from 'lucide-react';
 
 const TYPED_TITLES = [
   'Mohamed Essam Elfeshawy',
-  'Next.js & React Specialist',
-  'Frontend Software Engineer',
-  'TypeScript & Redux Architect',
-  'ITI Frontend Track Graduate',
+  'Front-End React.js Developer',
+  'Azzrk E-Commerce (Salla & Zid)',
+  'Next.js & TypeScript Architect',
+  'ITI 6-Month Track Graduate',
+  'Certified CS Instructor (iSchool)',
 ];
 
 export default function Hero() {
@@ -78,7 +81,7 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
               <span className="text-xs font-semibold uppercase tracking-wider text-cyan-300">
-                Available for New Roles & Projects
+                Available for Roles & Commercial Projects
               </span>
             </div>
 
@@ -93,11 +96,14 @@ export default function Hero() {
 
             {/* Sub-headline & Description */}
             <p className="text-lg sm:text-xl text-gray-300 font-medium mb-3">
-              Frontend Engineer specializing in <span className="text-cyan-400 font-semibold">Next.js</span>, <span className="text-cyan-400 font-semibold">React</span>, and <span className="text-cyan-400 font-semibold">TypeScript</span>.
+              Front-End Developer at <span className="text-cyan-400 font-semibold">Azzrk</span> specializing in <span className="text-cyan-400 font-semibold">React.js</span>, <span className="text-cyan-400 font-semibold">Salla & Zid</span>, and <span className="text-cyan-400 font-semibold">Next.js</span>.
             </p>
 
             <p className="text-sm sm:text-base text-gray-400 max-w-2xl leading-relaxed mb-8">
-              Mansoura University IT graduate (2023) & ITI Frontend Track Certified. I build scalable, high-conversion, and interactive web systems with clean architecture, enterprise state management (Redux/RTK Query), and pixel-perfect design systems.
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-semibold shadow-sm shadow-cyan-500/10 mr-1.5">
+                1+ Year Professional Experience
+              </span>
+              at <strong className="text-white font-semibold">Azzrk</strong> delivering scalable e-commerce platforms. Mansoura University IT graduate (<span className="text-emerald-400 font-medium">Grade: Very Good</span>, 2023), <strong className="text-white font-medium">ITI 6-Month Front-End Web Development Track</strong> certified, and accredited Computer Science Instructor by <strong className="text-white font-medium">iSchool &amp; STEM.org</strong>.
             </p>
 
             {/* CTA Action Buttons */}
@@ -111,21 +117,21 @@ export default function Hero() {
               </a>
 
               <a
-                href="#contact"
+                href="#experience"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-gray-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/40 hover:text-white transition-all duration-300 hover:scale-105"
               >
-                <span>Let&apos;s Talk</span>
-                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <span>Certifications & Career</span>
+                <Award className="w-4 h-4 text-emerald-400" />
               </a>
 
               <a
-                href={PERSONAL_INFO.githubProfile}
+                href={PERSONAL_INFO.linkedinProfile}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl font-medium text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10 hover:text-cyan-400 transition-all duration-200"
               >
-                <Github className="w-4 h-4" />
-                <span className="text-sm">GitHub</span>
+                <Linkedin className="w-4 h-4 text-cyan-400" />
+                <span className="text-sm">LinkedIn</span>
               </a>
             </div>
 
@@ -133,15 +139,15 @@ export default function Hero() {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-gray-400 font-mono">
               <span className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/5 border border-white/5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                100% Responsive
+                Salla & Zid Customization
               </span>
               <span className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/5 border border-white/5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                Next.js App Router
+                React.js & Next.js
               </span>
               <span className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/5 border border-white/5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400" />
-                Clean Code Architecture
+                Agile & Jira Workflows
               </span>
             </div>
           </div>
@@ -161,31 +167,31 @@ export default function Hero() {
                     alt={PERSONAL_INFO.name}
                     fill
                     sizes="(max-width: 768px) 300px, 400px"
-                    className="object-cover object-center scale-105 hover:scale-110 transition-transform duration-700"
+                    className="object-contain  object-center scale-105 hover:scale-110 transition-transform duration-700"
                     priority
                   />
                 </div>
               </div>
 
-              {/* Floating Badge 1: Next.js & React */}
+              {/* Floating Badge 1: React & E-Commerce */}
               <div className="absolute -top-3 -left-4 sm:-left-6 px-4 py-2.5 rounded-2xl bg-[#0e1320]/90 border border-cyan-500/30 backdrop-blur-md shadow-xl flex items-center gap-2.5 animate-float">
                 <div className="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400">
-                  <Code className="w-4 h-4" />
+                  <ShoppingBag className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-gray-400 uppercase font-mono">Speciality</div>
-                  <div className="text-xs font-bold text-white">Next.js & React</div>
+                  <div className="text-[10px] text-gray-400 uppercase font-mono">Specialty</div>
+                  <div className="text-xs font-bold text-white">React & E-Commerce</div>
                 </div>
               </div>
 
-              {/* Floating Badge 2: ITI & Mansoura */}
+              {/* Floating Badge 2: ITI & iSchool STEM */}
               <div className="absolute -bottom-4 -right-4 sm:-right-6 px-4 py-2.5 rounded-2xl bg-[#0e1320]/90 border border-emerald-500/30 backdrop-blur-md shadow-xl flex items-center gap-2.5 animate-float" style={{ animationDelay: '1.5s' }}>
                 <div className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400">
-                  <Layers className="w-4 h-4" />
+                  <Award className="w-4 h-4" />
                 </div>
                 <div>
                   <div className="text-[10px] text-gray-400 uppercase font-mono">Certified</div>
-                  <div className="text-xs font-bold text-white">ITI & Mansoura Univ</div>
+                  <div className="text-xs font-bold text-white">ITI & iSchool STEM</div>
                 </div>
               </div>
 
@@ -214,7 +220,7 @@ export default function Hero() {
         {/* Worked With / Tech Brands Banner */}
         <div className="mt-16 sm:mt-20 text-center">
           <p className="text-xs uppercase tracking-widest text-gray-500 font-mono mb-6">
-            Worked with & Integrated Technologies
+            E-Commerce & Technology Ecosystem
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 opacity-75 grayscale hover:grayscale-0 transition-all duration-300">
             {PARTNERS_LOGOS.map((partner, idx) => (
