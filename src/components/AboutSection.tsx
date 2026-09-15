@@ -71,7 +71,7 @@ export default function AboutSection() {
                       src={PERSONAL_INFO.avatar}
                       alt={PERSONAL_INFO.name}
                       fill
-                      className="object-cover"
+                      className="object-cover object-[center_30%] scale-110"
                     />
                   </motion.div>
                   <div>

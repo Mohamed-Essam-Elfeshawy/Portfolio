@@ -260,7 +260,7 @@ export default function Hero() {
                     alt={PERSONAL_INFO.name}
                     fill
                     sizes="(max-width: 768px) 300px, 400px"
-                    className="object-contain object-center scale-105 hover:scale-110 transition-transform duration-700"
+                    className="object-contain object-[center_30%] scale-110 hover:scale-115 transition-transform duration-700"
                     priority
                   />
                 </div>
