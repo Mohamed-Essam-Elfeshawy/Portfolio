@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { PERSONAL_INFO } from '@/data/portfolioData';
 import confetti from 'canvas-confetti';
 import { 
   Mail, 
-  Phone, 
   MapPin, 
   Send, 
   Check, 
@@ -46,8 +46,8 @@ export default function ContactSection() {
       
       try {
         confetti({
-          particleCount: 80,
-          spread: 70,
+          particleCount: 100,
+          spread: 80,
           origin: { y: 0.6 }
         });
       } catch (err) {
@@ -64,16 +64,26 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 relative bg-[#07090e] border-t border-white/5">
+    <section id="contact" className="py-24 relative bg-[#07090e] border-t border-white/5 overflow-hidden">
       {/* Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <motion.div 
+        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+        transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" 
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-3.5 h-3.5 animate-pulse" />
             Get In Touch
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -82,15 +92,24 @@ export default function ContactSection() {
           <p className="mt-4 text-base sm:text-lg text-gray-400">
             Have an opportunity, full-time role, or web project in mind? Reach out and let&apos;s discuss how I can contribute.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* Left: Contact Info & Quick Reachout */}
-          <div className="lg:col-span-5 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 space-y-6"
+          >
             
             {/* Email Copy Card */}
-            <div className="glass-panel p-6 rounded-2xl border border-white/10 relative overflow-hidden group">
+            <motion.div 
+              whileHover={{ y: -3 }}
+              className="glass-panel p-6 rounded-2xl border border-white/10 relative overflow-hidden group"
+            >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
@@ -102,24 +121,33 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={handleCopyEmail}
-                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 hover:text-cyan-400 border border-white/10 transition-all active:scale-95"
+                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 hover:text-cyan-400 border border-white/10 transition-colors"
                   title="Copy email to clipboard"
                   aria-label="Copy email"
                 >
                   {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                </button>
+                </motion.button>
               </div>
               {copiedEmail && (
-                <div className="mt-2 text-xs font-mono text-emerald-400 flex items-center gap-1">
+                <motion.div 
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-2 text-xs font-mono text-emerald-400 flex items-center gap-1"
+                >
                   <Check className="w-3 h-3" /> Email copied to clipboard!
-                </div>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
 
             {/* Location & Availability Card */}
-            <div className="glass-panel p-6 rounded-2xl border border-white/10 flex items-center gap-4">
+            <motion.div 
+              whileHover={{ y: -3 }}
+              className="glass-panel p-6 rounded-2xl border border-white/10 flex items-center gap-4"
+            >
               <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 <MapPin className="w-6 h-6" />
               </div>
@@ -127,10 +155,13 @@ export default function ContactSection() {
                 <h4 className="text-sm font-bold text-white">Location</h4>
                 <p className="text-xs text-gray-400">{PERSONAL_INFO.location}</p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Resume / CV Card */}
-            <div className="glass-panel p-6 rounded-2xl border border-cyan-500/30 bg-gradient-to-r from-cyan-500/5 via-indigo-500/5 to-transparent flex items-center justify-between gap-4">
+            <motion.div 
+              whileHover={{ y: -3 }}
+              className="glass-panel p-6 rounded-2xl border border-cyan-500/30 bg-gradient-to-r from-cyan-500/5 via-indigo-500/5 to-transparent flex items-center justify-between gap-4"
+            >
               <div className="flex items-center gap-4">
                 <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
                   <Download className="w-6 h-6" />
@@ -141,70 +172,84 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href={PERSONAL_INFO.resumeUrl}
                 download="Mohamed_Essam_Elfeshawy_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-md shadow-cyan-500/20 transition-all hover:scale-105 active:scale-95 shrink-0"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-md shadow-cyan-500/20 transition-all shrink-0"
               >
                 <span>Download CV</span>
                 <Download className="w-3.5 h-3.5" />
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
 
             {/* Direct Channels Links */}
             <div className="glass-panel p-6 rounded-2xl border border-white/10 space-y-3">
               <h4 className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-3">
-                Direct Channels & Socials
+                Direct Channels &amp; Socials
               </h4>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.04, y: -2 }}
+                  whileTap={{ scale: 0.96 }}
                   href={PERSONAL_INFO.linkedinProfile}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-[#131726] hover:bg-[#181d30] border border-white/5 hover:border-cyan-500/30 flex items-center justify-between text-xs font-medium text-gray-200 transition-all hover:scale-102"
+                  className="p-3 rounded-xl bg-[#131726] hover:bg-[#181d30] border border-white/5 hover:border-cyan-500/30 flex items-center justify-between text-xs font-medium text-gray-200 transition-all"
                 >
                   <span className="flex items-center gap-2">
                     <Linkedin className="w-4 h-4 text-cyan-400" />
                     LinkedIn
                   </span>
                   <ExternalLink className="w-3.5 h-3.5 text-gray-500" />
-                </a>
+                </motion.a>
 
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.04, y: -2 }}
+                  whileTap={{ scale: 0.96 }}
                   href={PERSONAL_INFO.githubProfile}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-[#131726] hover:bg-[#181d30] border border-white/5 hover:border-cyan-500/30 flex items-center justify-between text-xs font-medium text-gray-200 transition-all hover:scale-102"
+                  className="p-3 rounded-xl bg-[#131726] hover:bg-[#181d30] border border-white/5 hover:border-cyan-500/30 flex items-center justify-between text-xs font-medium text-gray-200 transition-all"
                 >
                   <span className="flex items-center gap-2">
                     <Github className="w-4 h-4 text-gray-300" />
                     GitHub
                   </span>
                   <ExternalLink className="w-3.5 h-3.5 text-gray-500" />
-                </a>
+                </motion.a>
 
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.04, y: -2 }}
+                  whileTap={{ scale: 0.96 }}
                   href={PERSONAL_INFO.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-[#131726] hover:bg-[#181d30] border border-white/5 hover:border-emerald-500/30 flex items-center justify-between text-xs font-medium text-gray-200 transition-all hover:scale-102"
+                  className="p-3 rounded-xl bg-[#131726] hover:bg-[#181d30] border border-white/5 hover:border-emerald-500/30 flex items-center justify-between text-xs font-medium text-gray-200 transition-all"
                 >
                   <span className="flex items-center gap-2">
                     <MessageSquare className="w-4 h-4 text-emerald-400" />
                     WhatsApp
                   </span>
                   <ExternalLink className="w-3.5 h-3.5 text-gray-500" />
-                </a>
+                </motion.a>
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right: Interactive Contact Form */}
-          <div className="lg:col-span-7">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7"
+          >
             <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 relative">
               
               <h3 className="text-xl font-bold text-white mb-2">Send a Direct Message</h3>
@@ -213,10 +258,14 @@ export default function ContactSection() {
               </p>
 
               {submitted && (
-                <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm flex items-center gap-3">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm flex items-center gap-3"
+                >
                   <Check className="w-5 h-5 shrink-0" />
                   <span>Thank you! Your message has been sent successfully. I will get back to you soon!</span>
-                </div>
+                </motion.div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -229,7 +278,7 @@ export default function ContactSection() {
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 rounded-xl bg-[#121624] border border-white/10 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/60"
+                      className="w-full px-4 py-3 rounded-xl bg-[#121624] border border-white/10 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/60 transition-all"
                     />
                   </div>
 
@@ -241,7 +290,7 @@ export default function ContactSection() {
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 rounded-xl bg-[#121624] border border-white/10 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/60"
+                      className="w-full px-4 py-3 rounded-xl bg-[#121624] border border-white/10 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/60 transition-all"
                     />
                   </div>
                 </div>
@@ -253,7 +302,7 @@ export default function ContactSection() {
                     value={formState.subject}
                     onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
                     placeholder="Project Inquiry / Job Opportunity"
-                    className="w-full px-4 py-3 rounded-xl bg-[#121624] border border-white/10 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/60"
+                    className="w-full px-4 py-3 rounded-xl bg-[#121624] border border-white/10 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/60 transition-all"
                   />
                 </div>
 
@@ -265,14 +314,16 @@ export default function ContactSection() {
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                     placeholder="Tell me about your project or role..."
-                    className="w-full px-4 py-3 rounded-xl bg-[#121624] border border-white/10 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/60 resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#121624] border border-white/10 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/60 resize-none transition-all"
                   />
                 </div>
 
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-primary-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25 transition-all duration-300 hover:scale-102 active:scale-98 disabled:opacity-50"
+                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-primary-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25 transition-all disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <span>Sending message...</span>
@@ -282,11 +333,11 @@ export default function ContactSection() {
                       <Send className="w-4 h-4" />
                     </>
                   )}
-                </button>
+                </motion.button>
               </form>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

@@ -2,15 +2,14 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { PERSONAL_INFO } from '@/data/portfolioData';
 import { 
   ArrowUp, 
   Github, 
   Linkedin, 
   Mail, 
-  Heart, 
-  Code2, 
-  Sparkles 
+  Code2
 } from 'lucide-react';
 
 export default function Footer() {
@@ -25,11 +24,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/5">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1.5px]">
+            <motion.div 
+              whileHover={{ rotate: 12, scale: 1.1 }}
+              className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1.5px]"
+            >
               <div className="w-full h-full bg-[#0a0d16] rounded-[10px] flex items-center justify-center">
                 <Code2 className="w-4 h-4 text-cyan-400" />
               </div>
-            </div>
+            </motion.div>
             <div>
               <span className="font-bold text-base text-white">{PERSONAL_INFO.name}</span>
               <p className="text-xs text-gray-400 font-mono">Frontend Engineer &amp; Next.js Specialist</p>
@@ -48,7 +50,9 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex items-center gap-3">
-            <a
+            <motion.a
+              whileHover={{ scale: 1.15, y: -2 }}
+              whileTap={{ scale: 0.9 }}
               href={PERSONAL_INFO.githubProfile}
               target="_blank"
               rel="noopener noreferrer"
@@ -56,8 +60,10 @@ export default function Footer() {
               className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors"
             >
               <Github className="w-4 h-4" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.15, y: -2 }}
+              whileTap={{ scale: 0.9 }}
               href={PERSONAL_INFO.linkedinProfile}
               target="_blank"
               rel="noopener noreferrer"
@@ -65,14 +71,16 @@ export default function Footer() {
               className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-cyan-400 transition-colors"
             >
               <Linkedin className="w-4 h-4" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.15, y: -2 }}
+              whileTap={{ scale: 0.9 }}
               href={`mailto:${PERSONAL_INFO.email}`}
               aria-label="Email"
               className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-emerald-400 transition-colors"
             >
               <Mail className="w-4 h-4" />
-            </a>
+            </motion.a>
           </div>
         </div>
 
@@ -86,13 +94,15 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.
           </p>
 
-          <button
+          <motion.button
+            whileHover={{ scale: 1.15, y: -2 }}
+            whileTap={{ scale: 0.9 }}
             onClick={scrollToTop}
             aria-label="Back to top"
-            className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-400 hover:text-cyan-400 border border-white/5 transition-all hover:scale-105"
+            className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-400 hover:text-cyan-400 border border-white/5 transition-colors"
           >
             <ArrowUp className="w-4 h-4" />
-          </button>
+          </motion.button>
         </div>
 
       </div>
